@@ -1,0 +1,58 @@
+{
+    "name":  "manga-translator-ai",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Web app fullstack para traduccion de mangas (CBZ/CBR) con Gemini",
+    "scripts":  {
+                    "dev":  "concurrently -n web,worker -c cyan,magenta \"npm run dev:web\" \"npm run dev:worker\"",
+                    "build":  "next build",
+                    "start":  "next start",
+                    "lint":  "eslint . --max-warnings=0",
+                    "typecheck":  "tsc --noEmit",
+                    "test":  "vitest run",
+                    "test:watch":  "vitest",
+                    "test:e2e":  "playwright test",
+                    "db:generate":  "prisma generate",
+                    "db:migrate":  "prisma migrate dev",
+                    "db:push":  "prisma db push",
+                    "db:studio":  "prisma studio",
+                    "worker:translation":  "npm run dev:worker",
+                    "dev:web":  "next dev",
+                    "dev:worker":  "tsx src/queues/translation.worker.ts"
+                },
+    "dependencies":  {
+                         "@google/genai":  "^1.44.0",
+                         "@prisma/client":  "^6.19.2",
+                         "@tanstack/react-query":  "^5.90.21",
+                         "bullmq":  "^5.70.4",
+                         "ioredis":  "^5.10.0",
+                         "next":  "^16.1.6",
+                         "node-stream-zip":  "^1.15.0",
+                         "node-unrar-js":  "^2.0.2",
+                         "pino":  "^10.3.1",
+                         "react":  "^19.2.4",
+                         "react-dom":  "^19.2.4",
+                         "sharp":  "^0.34.5",
+                         "zod":  "^4.3.6"
+                     },
+    "devDependencies":  {
+                            "@playwright/test":  "^1.58.2",
+                            "@testing-library/jest-dom":  "^6.9.1",
+                            "@testing-library/react":  "^16.3.0",
+                            "@types/node":  "^24.6.0",
+                            "@types/react":  "^19.2.2",
+                            "@types/react-dom":  "^19.2.2",
+                            "@vitest/coverage-v8":  "^4.0.18",
+                            "eslint":  "^9.39.4",
+                            "eslint-config-next":  "^16.1.6",
+                            "jsdom":  "^27.0.0",
+                            "prisma":  "^6.19.2",
+                            "tsx":  "^4.20.6",
+                            "typescript":  "^5.9.3",
+                            "vitest":  "^4.0.18",
+                            "concurrently":  "^9.2.1"
+                        },
+    "engines":  {
+                    "node":  "\u003e=22.0.0"
+                }
+}

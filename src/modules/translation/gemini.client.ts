@@ -1,0 +1,1 @@
+export { translatePageWithGemini as translatePageText, type TranslationBlock } from "@/modules/translation/translation.service";

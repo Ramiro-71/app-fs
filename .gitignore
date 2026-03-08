@@ -38,6 +38,12 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Next.js
+.next/
+
 # AI Agents for development
 .agents
 skills-lock.json
+
+# storage
+storage/
